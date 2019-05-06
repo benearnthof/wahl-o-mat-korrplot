@@ -1,4 +1,5 @@
 library(corrplot)
+library(RColorBrewer)
 # data ==== 
 parties <- c("cdu","sdp","gruen","linke","afd","fdp","freiewaehler","piraten",
              "npd","familienpart","oedp","diepartei",
@@ -46,7 +47,7 @@ title("Correlationmatrix: Wahl-O-Mat answers of the Parties EU elections 2019",
 # attempting to sort the matrix 
 require(psych)
 data.corr.sorted <- mat.sort(data.corr, f = NULL)
-corrplot(data.corr.sorted, tl.col="black", tl.cex=0.8, mar=c(0.5,0,3,0))
+corrplot(data.corr.sorted, tl.col="black", tl.cex=0.8, mar=c(0.5,0,3,0), method = "pie", col=brewer.pal(n=8, name="RdYlBu"))
 title("Correlationmatrix: Wahl-O-Mat answers of the Parties EU elections 2019", 
       cex.main=0.7)
 
