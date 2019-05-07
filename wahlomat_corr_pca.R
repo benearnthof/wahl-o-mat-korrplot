@@ -3,7 +3,7 @@ library(RColorBrewer)
 # data ==== 
 parties <- c("cdu","sdp","gruen","linke","afd","fdp","freiewaehler","piraten",
              "npd","familienpart","oedp","diepartei",
-             "mlpd","dritteweg","diegrauen","diehumanisten","volt", "ludi", "bene")
+             "mlpd","dritteweg","diegrauen","diehumanisten","volt")
 data <- as.data.frame(matrix(NA, 38, length(parties)))
 names(data) <- parties
 # data copied from www.wahl-o-mat.de/europawahl2019/ ####
@@ -24,12 +24,12 @@ data$dritteweg <- c(F,F,F,T,T,F,T,F,T,F,F,F,T,F,F,T,NA,F,F,T,F,F,F,F,F,T,F,T,T,T
 data$diegrauen <- c(T,T,T,T,F,F,T,F,NA,F,NA,T,T,T,T,F,F,F,T,T,T,T,T,T,T,T,NA,NA,T,T,T,NA,NA,T,T,T,F,T)
 data$diehumanisten <- c(F,T,T,F,F,F,NA,T,F,T,T,F,T,NA,F,F,T,T,T,F,T,T,T,T,T,F,F,F,F,F,F,T,T,T,NA,F,T,T)
 data$volt <- c(F,T,T,T,F,T,T,T,F,T,T,F,T,NA,T,F,T,T,T,F,T,T,T,T,F,T,F,F,F,F,T,T,T,T,T,F,T,T)
-data$ludi <- c(F,T,T,T, F,F,T,F, T,F,T,T, T,T,F,F, T,T,T,F, F,T,T,T, T,NA,F,F, F,F,T,T, T,T,T,T, F,F)
-data$bene <- c(F,T,F,NA,F,F,T,T,F,F,F,F,T,T,F,F,T,F,T,NA,T,F,T,T,T,T,F,NA,NA,F,T,NA,F,T,T,F,NA,F)
+#data$ludi <- c(F,T,T,T, F,F,T,F, T,F,T,T, T,T,F,F, T,T,T,F, F,T,T,T, T,NA,F,F, F,F,T,T, T,T,T,T, F,F)
+#data$bene <- c(F,T,F,NA,F,F,T,T,F,F,F,F,T,T,F,F,T,F,T,NA,T,F,T,T,T,T,F,NA,NA,F,T,NA,F,T,T,F,NA,F)
 
 parties.label <- c("CDU","SPD","Grüne","Linke","AFD","FDP","Freie Wähler","Piraten",
                    "NPD","Familien Partei","ÖDP","Die Partei",
-                   "MLPD","Der Dritte Weg","Die Grauen","Humanisten","Volt", "Ludi", "Bene")
+                   "MLPD","Der Dritte Weg","Die Grauen","Humanisten","Volt")
 names(data) <- parties.label
 
 data[data==T] <- 1
