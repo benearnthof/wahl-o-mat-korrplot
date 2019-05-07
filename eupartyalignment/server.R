@@ -60,14 +60,15 @@ shinyServer(function(input, output) {
             cex.main=0.7)
       # sorting data for better readability
       data.corr.sorted <- mat.sort(data.corr, f = NULL)
-      srtplt <- corrplot(data.corr.sorted, tl.col="black", tl.cex=0.8, mar=c(0.5,0,3,0), method = "pie", col=brewer.pal(n=8, name="RdYlBu"))
+      srtplt <- corrplot(data.corr.sorted, tl.col="black", tl.cex=0.8, mar=c(0.5,0,3,0), method = "pie", col=brewer.pal(n=8, name="RdYlBu"),
+                         number.digits = 1, addCoef.col = "black")
       title("Correlation of your political Opinions with those of the german Parties", 
             cex.main=1.2)
       
       
       
       return(srtplt)
-    },width = 600, height = 600)  
+    },width = 800, height = 800)  
   
     output$uservector <- renderText({
         # parsing userinputs
@@ -98,6 +99,12 @@ shinyServer(function(input, output) {
         # draw the histogram with the specified number of bins
         hist(x, breaks = bins, col = 'darkgray', border = 'white')
 
+    })
+    output$howto <- renderText({
+      c("How to use this app: Go to https://www.wahl-o-mat.de/europawahl2019/ and click on Start.
+        Read the Statements and enter your opinion to them in the corresponding input boxes.
+        The plot shows how strongly your opinions correlate with those of the german political parties.
+        Thank you for testing my app!")
     })
 
 })

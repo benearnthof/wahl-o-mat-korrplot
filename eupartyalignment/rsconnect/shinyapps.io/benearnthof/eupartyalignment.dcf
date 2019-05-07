@@ -1,0 +1,12 @@
+name: eupartyalignment
+title: eupartyalignment
+username:
+account: benearnthof
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 914807
+bundleId: 2066526
+url: https://benearnthof.shinyapps.io/eupartyalignment/
+when: 1557235063.41531
+asMultiple: FALSE
+asStatic: FALSE
